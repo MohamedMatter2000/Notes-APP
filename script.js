@@ -7,7 +7,7 @@ let container = document.querySelector(".container");
 let addbtn = document.querySelector("form button");
 let title = document.querySelector("#title");
 let Description = document.querySelector("#Description");
-let notes = JSON.parse(localStorage.getItem("notes") || []);
+let notes = JSON.parse(localStorage.getItem("notes") || "[]");
 let isUpdate = false,
   updateId;
 let data = new Date();
