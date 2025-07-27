@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  background: #88ABFF;
+}
+:root{
+    --main-color:#88abff ;
+}
+ body{
+    background:var(--main-color);
+ }
+ .container{
+    margin: 50px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, 265px);
+ }
+ .container .notes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fff;
+    color: var(--main-color);
+    height: 250px;
+    border-radius: 6px;
+    cursor: pointer;
+ }
+ .container .notes .add {
+    width: 85px;
+    height: 85px;
+    border: 2px dashed;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    font-size: 2rem;
+ } 
+ .container .notes h4{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 1rem;
+ }
+ .pop-box{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+ }
+ .pop {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    width: 100%;
+    max-width: 400px;
+    transform: translate(-50%, -50%) scale(0.95);
+ }
+ .pop-box, .pop{
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+ .pop-box.show,
+ .pop.show{
+    opacity: 1;
+    pointer-events: auto;
+ }
+ .pop.show{
+    transform: translate(-50%, -50%) scale(1);
+ }
+ .pop .content{
+    background: #fff;
+    border-radius: 10px;
+    width: calc(100% - 15px);
+ }
+ .pop .head  {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom:20px;
+  border-bottom: 1px solid #ccc;
+  padding: 25px;
+ }
+ .pop .head p {
+font-size: 20px;
+font-weight: 500;
+ }
+ .pop .head i {
+    color: #8b8989;
+    cursor: pointer;
+    font-size: 20px;
+ }
+ .pop form {
+    margin: 15px 25px 35px;
+    padding-bottom: 25px;
+ }
+ .pop form .row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+ }
+ .pop form .row label {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 6px;
+ }
+ .pop form .row input,textarea {
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: 1px solid #999;
+   }
+ .pop form .row textarea {
+height: 150px;
+resize: none;
+padding: 8px 15px;
+ }
+ input:focus,textarea:focus{
+    box-shadow:  7px 7px 22px #999ea566,
+    inset 7px 7px 7px rgba(255,255,255,0.55),
+    -9px -9px 15px rgba(255,255,255,1) 
+ }
+ .pop form button{
+      width: 100%;
+      height: 50px;
+      background: #6a93f8;
+      color: #fff;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      font-size: 17px;
+      cursor: pointer;
+ }
+ /* // */
+ .container .card {
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   padding: 25px 20px;
+   border-radius: 6px;
+   height: 250px;
+ }
+ .container .card .content h2 {
+   margin-bottom: 10px;
+   font-size: 20px;
+   font-weight: 500
+ }
+ .container .card .content p {
+   color: #575757;
+   font-size: 17px;
+   font-weight: 400;
+   padding-bottom: 10px;
+ }
+ .container .card  .Settings {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   border-top: 1px solid #ccc;
+   padding-top: 15px;
+   color: #575757;
+ }
+ .container .card  .Settings span {
+   font-size: 15px;
+ }
+ .container .card  .Settings .change{
+position: relative;
+ }
+ .container .card  .Settings .change i  {
+cursor: pointer;
+font-size: 16px;
+ }
+ .container .card  .Settings .change .edit-remove {
+   position: absolute;
+   list-style: none;
+   background: #fff;
+   padding: 6px 0px;
+   display: flex;
+   flex-direction: column;
+   border-radius: 6px;
+   top: 0;
+   transform-origin: bottom right;
+   left: 0;
+   transform: translate(-80%, -60%) scale(0);
+   box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+   transition: all 0.2s ;
+ }
+ .container .card  .Settings .change.show .edit-remove {
+ transform: translate(-80%, -60%) scale(1);
+ }
+
+ .container .card  .Settings .change .edit-remove div {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 10px;
+   margin-bottom: 6px;
+   color: black;
+   text-transform: capitalize; 
+   cursor: pointer;
+   padding: 8px 18px;
+   transition: all 0.25s;
+} 
+.container .card  .Settings .change .edit-remove div:hover {
+background-color: #f5f5f5;
+}
+.container .card  .Settings .change .edit-remove div:last-child {
+   margin: 0;
+}
+.container .card  .Settings .change .edit-remove div i{
+   font-size: 12px;
+   color: #575757;
+}
+@media (max-width: 660px){
+   .container{
+     margin: 15px;
+     gap: 15px;
+     grid-template-columns: repeat(auto-fill, 100%);
+   }
+   .pop .content {
+     width: calc(100% - 30px);
+     margin-left: 15px;
+   }
+   .edit-remove div i{
+     font-size: 17px;
+   }
+ }
